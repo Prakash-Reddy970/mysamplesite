@@ -1,0 +1,29 @@
+.simple-block {
+  padding: 24px 0;
+}
+
+.simple-block-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.simple-block-cell {
+  display: grid;
+  min-height: 96px;
+  padding: 16px 8px;
+  border: 1px solid var(--dark-color);
+  background-color: var(--light-color);
+  color: var(--text-color);
+  place-items: center;
+  text-align: center;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xs);
+  font-weight: 600;
+}
+
+.simple-block-cell:nth-child(4n + 2),
+.simple-block-cell:nth-child(4n + 3) {
+  background-color: var(--text-color);
+  color: var(--light-color);
+}
