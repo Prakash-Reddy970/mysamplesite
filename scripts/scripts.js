@@ -74,6 +74,17 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Adds the sample 4x4 block to the page when it is not authored yet.
+ * @param {Element} main The container element
+ */
+function buildSimpleBlockAutoBlock(main) {
+  if (main.querySelector('.simple-block')) return;
+  const section = document.createElement('div');
+  section.append(buildBlock('simple-block', ''));
+  main.append(section);
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -97,6 +108,7 @@ function buildAutoBlocks(main) {
       });
     }
     buildWidgetAutoBlocks(main);
+    buildSimpleBlockAutoBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
